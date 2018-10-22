@@ -16,6 +16,12 @@ hr{
     border: none;
     border-top: 1px solid #DEDEDE;
 }
+ul,ol{
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
 .clearfix::after{
     content: '';
     display:block;
@@ -36,6 +42,7 @@ hr{
 .topNavBar nav{
     float: right;
     padding-top: 7px;
+    padding-right: 190px;
 }
 .topNavBar nav ul{
     margin: 0;
@@ -47,7 +54,7 @@ hr{
 }
 .topNavBar nav ul>li>a{
     color: rgba(255,255,255,0.7);
-    font-size: 12px;
+    font-size: 14px;
     font-family: "Impact";
     margin-left: 17px;
     margin-right: 17px; 
@@ -57,19 +64,21 @@ hr{
     padding-top: 6px;     
     padding-bottom: 6px; 
     display: block;
-}
+} 
 .topNavBar nav ul>li>a:hover{
+    display: block;
+    padding-bottom: 6px;
     border-bottom: 3px solid rgb(232, 103, 107);
+    border-radius: 2px;
 }
 
 .logo{
     font-family: "Arial Black";
-    font-size: 24px;
-    padding-top: 4px;
-    padding-bottom: 3px;
+    font-size: 30px;
+    padding-left: 172px;
 }
 .logo .rs{
-    color: #E6686A;
+    color: rgb(232, 103, 107);
     margin-right:4px; 
 }
 .logo .card{
@@ -83,18 +92,20 @@ hr{
 }
 .banner .mask{
     height: 515px;
-    background-color: rgba(78, 82, 104, 0.8);
+    background-color: rgba(44, 51, 64, 0.8);
 }
-.userCard{
-    max-width: 960px;
+.userCard{ 
+    max-width: 930px;
     margin-left: auto;
     margin-right: auto;
     background-color: #FFFFFF;
+    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.5);
 }
 .userCard .welcome{
     background:rgb(232, 103, 107);
     color: white;
     display: inline-block;
+    vertical-align: top;
     font-size: 14px;
     font-weight: bold;
     padding: 5px 15px;
@@ -102,7 +113,19 @@ hr{
     position: relative;
     
 }
-.userCard .welcome .triangle{
+/* .userCard .welcome .triangle{
+    position: absolute;
+    display: block;
+    border: 10px solid transparent;
+    width: 0;
+    border-left-color: rgb(232, 103, 107);
+    border-top-width: 0px;
+    top:100%;
+    left: 6px;
+    
+} */
+.userCard .welcome::after{
+    content: "";
     position: absolute;
     display: block;
     border: 10px solid transparent;
@@ -120,9 +143,11 @@ hr{
 .userCard .text{
     float: left;
     width:470px;
+    
 }
 .userCard .pictureAndText{
-    padding: 57px 50px;
+    padding: 57px 50px 40px 50px;
+
 }
 .userCard .text h1{
     margin-top: 27px;
@@ -156,7 +181,7 @@ hr{
     line-height: 30px;
     padding: 5px 0;
     border-radius: 80%;
-    margin: 30px 25px;
+    margin: 25px 25px 20px 25px;
 }
 .userCard > footer.media >a:hover{
     background-color: #CF505F;
@@ -167,3 +192,139 @@ hr{
     fill: white;
     vertical-align: top;
 }
+
+body > main{
+    margin-top: -344px;
+}
+body > main .downloadResume-wrapper{
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+body > main .downloadResume{
+    font-size: 15px;
+    color: rgb(61, 68, 81);
+    display: inline-block;
+    line-height: 16px;
+    padding: 21px 80px 21px 85px;
+    margin: 35px;
+    border: 1px solid rgb(203, 205, 207);
+    border-radius: 2px;
+    font-weight: bold;
+}
+body > main .downloadResume:hover{
+    box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.3);
+    transition: box-shadow 0.3s;
+}
+body > main .downloadResume-wrapper span{
+    padding-right: 5px;
+}
+
+.selfIntroduction{
+    width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 36px;
+    font-size: 20px;
+}
+
+section.skills,
+section.portfolio{
+    width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+section.skills > h2,
+section.portfolio > h2{
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 25px;
+}
+section.skills > ol{
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    padding: 40px 50px 10px 50px;
+}
+section.skills > ol > li{
+    float: left;
+    width: 48.4%;
+    box-sizing: border-box;
+}
+section.skills > ol > li:nth-child(even){
+    float: right;
+}
+section.skills > ol > li > h3{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+section.skills .progressBar{
+    height: 5px;
+    background: #FAE1E1;
+    border-radius: 2px;
+    margin-bottom: 36px;
+}
+section.skills .progressBar .progress{
+    background: #e8676b;
+    width: 50%;
+    height: 100%;
+    border-radius: 2px;
+}
+section.portfolio{
+    text-align: center;
+}
+section.portfolio > nav{
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+section.portfolio > nav > ol{
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 10px; 
+    cursor: pointer;
+}
+section.portfolio > nav > ol > li{
+    float: left;
+    margin-left: 40px;
+}
+section.portfolio > nav > ol > li:nth-child(1){
+    margin-left: 0; 
+}
+section.portfolio >nav .bar{
+    height: 5px;
+    background: white;
+    margin-bottom: 28px;
+    border-radius: 2px;
+}
+section.portfolio >nav .bar-inner{
+    background: #e8676b;
+    height: 100%;
+    width: 10%;
+    border-radius: 2px;
+    transition: all 0.3s; 
+}
+section.portfolio >nav .bar.state-1 .bar-inner {
+    width: 35px;
+    margin-left: 0px;
+}
+section.portfolio >nav .bar.state-2 .bar-inner {
+    width: 35px;
+    margin-left: 71px;
+}section.portfolio >nav .bar.state-3 .bar-inner{
+    width: 93px;
+    margin-left: 142px;
+}
+section.portfolio .works{
+    position: relative;
+}
+section.portfolio .works > .big,
+section.portfolio .works > .small{
+    position: absolute;
+}
+
