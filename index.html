@@ -4,48 +4,9 @@
 <head>
   <title>陈星宇的个人简历</title>
   <link rel="stylesheet" type="text/css" href="a.css">
+  <link rel="stylesheet" type="text/css" href="loading.css">
   <script src="//at.alicdn.com/t/font_882596_hgmcdcvpbjb.js"></script>
   <style>
-    .loading {
-      width: 200px;
-      height: 200px;
-      position: relative;
-    }
-
-    .loading::before,
-    .loading::after {
-      content: '';
-      position: absolute;
-      width: 0px;
-      height: 0px;
-      background-color: black;
-      border-radius: 50%;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
-      animation: ripple 1.5s linear infinite;
-    }
-
-    .loading::after {
-      animation-delay: 0.75s
-    }
-
-    @keyframes ripple {
-      0% {
-        width: 0px;
-        height: 0px;
-        opacity: 0.7;
-      }
-
-      100% {
-        width: 100px;
-        height: 100px;
-        opacity: 0;
-      }
-    }
-
     .icon {
       width: 1em;
       height: 1em;
@@ -61,7 +22,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #888;
+      background: white;
       z-index: 1;
       justify-content: center;
       align-items: center;
@@ -259,7 +220,9 @@
 
   </section>
   <script>
-    siteWelcome.classList.remove('active')
+    setTimeout(function () {
+      siteWelcome.classList.remove('active')
+    }, 3000)
   </script>
 </body>
 
