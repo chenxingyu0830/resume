@@ -29,10 +29,22 @@ h1,h2,h3,h4,h5,h6{
 }
 /* 上面不要看 */
 .topNavBar{
-    padding: 20px 0 20px 0; 
+    padding: 20px 0; 
     position: fixed;
     width: 100%;
 }
+.topNavBar.sticky{
+    background: white;
+    transition: all 1s;
+    padding: 10px 0;
+    z-index: 1;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.4);
+}
+.topNavBar.sticky nav{
+    padding-top: 2px;
+    color: #3c4451
+}
+
 .topNavBar-inner{
     padding: 0 16px;
 }
@@ -43,17 +55,20 @@ h1,h2,h3,h4,h5,h6{
     float: right;
     padding-top: 7px;
     padding-right: 190px;
+    color: rgba(255,255,255,0.7);
 }
 .topNavBar nav ul{
     margin: 0;
     padding: 0;
 }
-.topNavBar nav ul>li{
+.topNavBar nav>ul>li{
     float: left;
     list-style: none;
+    position: relative;
+    margin: 3px 0px 0px 30px;
 }
-.topNavBar nav ul>li>a{
-    color: rgba(255,255,255,0.7);
+.topNavBar nav>ul>li>a{
+    color: inherit;
     font-size: 14px;
     font-family: "Impact";
     font-weight: bold;
@@ -61,32 +76,69 @@ h1,h2,h3,h4,h5,h6{
     padding-bottom: 6px;
     display: block;
     position: relative;
-    margin: 3px 20px 0px 2px;
+
 } 
-.topNavBar nav ul>li>a::after{
+
+.topNavBar nav ul > li.active > a:after{
     content: '';
-    position: absolute;
-    border: 1.5px solid rgb(232, 103, 107);
-    border-radius: 2px;
-    left: 0;
-    right: 0;
-    bottom: -3px;
-    display: none;
-}
-.topNavBar nav ul>li>a:hover::after{
     display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgb(232, 103, 107);
+    border-radius: 2px;
+    height: 3px;
+    animation: menuSlide 0.3s;
+}
+@keyframes menuSlide{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
 }
 
-.logo{
+.topNavBar .submenu{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    background: white;
+    color: #3c4451;
+    box-shadow: 
+    0 1px 6px rgba(0, 0, 0, 0.12), 
+    0 1px 4px rgba(0, 0, 0, 0.24);
+    cursor: pointer;    /*改变鼠标图标*/
+}
+.topNavBar li.active > .submenu{
+    display: block;
+    animation: submenuSlide 0.3s;
+}
+@keyframes submenuSlide{
+    0%{
+        margin-right: 100%;
+    }
+    100%{
+        margin-right: 0;
+    }
+}
+
+.topNavBar .submenu > li{
+    white-space: nowrap;
+    padding: 10px 30px;
+}
+.topNavBar .logo{
     font-family: "Arial Black";
     font-size: 30px;
     padding-left: 172px;
 }
-.logo .rs{
+.topNavBar .logo .rs{
     color: rgb(232, 103, 107);
     margin-right:4px; 
 }
-.logo .card{
+.topNavBar .logo .card{
     color: rgb(154, 157, 162);
 }
 .banner{
