@@ -60,17 +60,10 @@
           <li>
             <a href="#">博客</a>
             <ul class="submenu">
-<<<<<<< HEAD
               <li>博客1</li>
               <li>博客2</li>
               <li>博客3</li>
             </ul>
-=======
-                <li>博客1</li>
-                <li>博客2</li>
-                <li>博客3</li>
-              </ul>
->>>>>>> dc54992abdc003a9568844de271092d1e1419877
           </li>
           <li><a href="#">日历</a></li>
           <li><a href="#">联系方式</a></li>
@@ -246,23 +239,15 @@
       siteWelcome.classList.remove('active')
     }, 1000)
 
-<<<<<<< HEAD
     window.onscroll = function () {
       if (scrollY > 0) {
         topNavBar.classList.add('sticky')
       } else {
-=======
-    window.onscroll = function(){
-      if(scrollY>0){
-        topNavBar.classList.add('sticky')
-      }else{
->>>>>>> dc54992abdc003a9568844de271092d1e1419877
         topNavBar.classList.remove('sticky')
       }
     }
 
     let liTags = document.querySelectorAll('nav.menu > ul > li')
-<<<<<<< HEAD
     for (let i = 0; i < liTags.length; i++) {
       liTags[i].onmouseenter = function (x) {
         x.currentTarget.classList.add('active')
@@ -283,17 +268,6 @@
         window.scrollTo(0, top - 80)
       }
     }
-=======
-    console.log(liTags)
-    for(let i=0; i<liTags.length; i++){
-      liTags[i].onmouseenter = function(x){
-        x.currentTarget.classList.add('active')
-      }
-      liTags[i].onmouseleave = function(x){
-        x.currentTarget.classList.remove('active')
-      }
-    }
->>>>>>> dc54992abdc003a9568844de271092d1e1419877
   </script>
 </body>
 
