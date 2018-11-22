@@ -32,8 +32,8 @@
     .site-welcome.active {
       display: flex;
     }
-
   </style>
+
 </head>
 
 <body>
@@ -234,6 +234,7 @@
     </div>
 
   </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
   <script>
     setTimeout(function () {
       siteWelcome.classList.remove('active')
@@ -258,14 +259,36 @@
     }
 
     let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+
+    function animate(time) {
+      requestAnimationFrame(animate);
+      TWEEN.update(time);
+    }
+    requestAnimationFrame(animate);
+
+
     for (let i = 0; i < aTags.length; i++) {
       aTags[i].onclick = function (x) {
         x.preventDefault()
-        let a = x.currentTarget
-        let href = a.getAttribute('href') //'#siteAbout'
-        let element = document.querySelector(href)
-        let top = element.offsetTop
-        window.scrollTo(0, top - 80)
+        // let a = x.currentTarget
+        // let href = a.getAttribute('href') //'#siteAbout'
+        // let element = document.querySelector(href)
+        // let top = element.offsetTop
+        let top = document.querySelector(x.currentTarget.getAttribute('href')).offsetTop
+
+        let currentTop = window.scrollY //当前TOP
+        let targetTop = top - 80 //目标TOP
+        let s = targetTop - currentTop
+        let t = Math.abs((s/100)*500)
+        if(t > 1000){ t = 1000}
+        var coords = { y: currentTop};            //tween.js缓动效果
+        var tween = new TWEEN.Tween(coords)
+          .to({y: targetTop}, t)
+          .easing(TWEEN.Easing.Quadratic.In)
+          .onUpdate(function () {
+            window.scrollTo(0, coords.y)
+          })
+          .start();
       }
     }
   </script>
