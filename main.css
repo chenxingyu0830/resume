@@ -506,7 +506,9 @@ section.portfolio .swiper-button-next {
     left: 100%;
     right: auto;
 }
-
+section.message{
+    margin-bottom: 300px;
+}
 section.message > ol{
     max-width: 668px;
     margin: 0 auto;
