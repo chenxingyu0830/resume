@@ -353,7 +353,8 @@ body>main .downloadResume-wrapper span {
 }
 
 section.skills,
-section.portfolio {
+section.portfolio,
+section.message {
     width: 930px;
     margin-left: auto;
     margin-right: auto;
@@ -508,6 +509,7 @@ section.portfolio .swiper-button-next {
 }
 section.message{
     margin-bottom: 300px;
+    max-width: 668px;
 }
 section.message > ol{
     max-width: 668px;
