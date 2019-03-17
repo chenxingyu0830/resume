@@ -34,4 +34,16 @@
     }
     li.classList.add('highlight')
   }
+  let liTags = document.querySelectorAll('view > ul > li')
+  for (let i = 0; i < liTags.length; i++) {
+    liTags[i].onmouseenter = function (x) {
+      x.currentTarget.classList.add('active')
+    }
+    liTags[i].onmouseleave = function (x) {
+      x.currentTarget.classList.remove('active')
+    }
+  }
+  setTimeout(function(){
+    siteWelcome.classList.remove('active')
+  },1000)
 }.call()

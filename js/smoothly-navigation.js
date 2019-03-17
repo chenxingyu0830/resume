@@ -39,7 +39,7 @@
         .start();
     },
     bindEvents: function(){
-      let aTags = document.querySelectorAll('view > ul > li > a')
+      let aTags = this.view.querySelectorAll('nav.menu > ul > li > a')
       for (let i = 0; i < aTags.length; i++) {
         aTags[i].onclick = (x)=> {
           x.preventDefault()
@@ -55,18 +55,3 @@
   controller.init(view)
 }.call()
 
-!function(){
-  setTimeout(function () {
-    siteWelcome.classList.remove('active')
-  }, 1000)
-  
-  let liTags = document.querySelectorAll('view > ul > li')
-  for (let i = 0; i < liTags.length; i++) {
-    liTags[i].onmouseenter = function (x) {
-      x.currentTarget.classList.add('active')
-    }
-    liTags[i].onmouseleave = function (x) {
-      x.currentTarget.classList.remove('active')
-    }
-  }
-}.call()
