@@ -180,13 +180,14 @@ h6 {
     padding-left: 172px;
 }
 
-.topNavBar .logo .rs {
+.topNavBar .logo .pink {
     color: rgb(232, 103, 107);
     margin-right: 4px;
 }
 
-.topNavBar .logo .card {
+.topNavBar .logo .gray {
     color: rgb(154, 157, 162);
+    margin-right: 10px;
 }
 
 .banner {
